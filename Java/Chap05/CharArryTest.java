@@ -6,10 +6,8 @@ public class CharArryTest {
         char[] charArr = {'a','b', 'c', 'd', 'e', 'f'};
         System.out.println(intArr);
         System.out.println(charArr);
-        System.out.println("charArr: " + charArr);
     }
 }
 
 // [I@24d46ca6
 // abcdef
-// charArr: [C@4517d9a3
