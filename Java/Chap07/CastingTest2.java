@@ -7,7 +7,7 @@ public class CastingTest2 {
         FireEngine fe = null;
 
         car.drive();
-        fe = (FireEngine) car; // Runtime Error
+        fe = (FireEngine) car; // Runtime Error due to try to down cast
         fe.drive();
         car2 = fe;
         car2.drive();
