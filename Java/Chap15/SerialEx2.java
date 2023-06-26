@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class SerialEx2 {
-    static final long serialVersionUID = 35786158695156L;
     public static void main(String[] args) {
         try {
             String fileName = "UserInfo.ser";
