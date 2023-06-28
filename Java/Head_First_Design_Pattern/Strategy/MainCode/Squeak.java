@@ -1,4 +1,4 @@
-package Head_First_Design_Pattern.ch1;
+package Head_First_Design_Pattern.Strategy.MainCode;
 
 public class Squeak implements QuackBehavior {
     public void quack() {
