@@ -12,20 +12,12 @@ https://www.w3resource.com/java-exercises/stream/index.php
 8. Write a Java program to find the second smallest and largest elements in a list of integers using streams.
 
 
-https://blog.devgenius.io/15-practical-exercises-help-you-master-java-stream-api-3f9c86b1cf82
-
-1. Obtain a list of products belongs to category “Books” with price > 100
-2. Obtain a list of order with products belong to category “Baby”
-3. Obtain a list of product with category = “Toys” and then apply 10% discount
-4. Obtain a list of products ordered by customer of tier 2 between 01-Feb-2021 and 01-Apr-2021
-5. Get the cheapest products of “Books” category
-6. Get the 3 most recent placed order
-7. Get a list of orders which were ordered on 15-Mar-2021, log the order records to the console and then return its product list
-8. Calculate total lump sum of all orders placed in Feb 2021
-9. Calculate order average payment placed on 14-Mar-2021
-10. Obtain a collection of statistic figures (i.e. sum, average, max, min, count) for all products of category “Books”
-11. Obtain a data map with order id and order’s product count
-12. Produce a data map with order records grouped by customer
-13. Produce a data map with order record and product total sum
-14. Obtain a data map with list of product name by category
-15. Get the most expensive product by category
+https://www.java67.com/2014/04/java-8-stream-examples-and-tutorial.html
+1. Counting Empty String
+2. Count String whose length is more than three
+3. Count number of String which starts with "a"
+4. Remove all empty Strings from List
+5. Create a List with String more than 2 characters
+6. Convert String to uppercase and Join them with coma
+7. Create a List of the square of all distinct numbers
+8. Get count, min, max, sum, and the average for numbers
