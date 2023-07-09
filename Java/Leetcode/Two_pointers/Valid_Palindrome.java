@@ -8,7 +8,6 @@ Alphanumeric characters include letters and numbers.
 
 */
 
-import java.util.*;
 
 public class Valid_Palindrome {
     public static void main(String[] args) {

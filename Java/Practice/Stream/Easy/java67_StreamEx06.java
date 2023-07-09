@@ -1,3 +1,4 @@
+package Easy;
 // https://www.java67.com/2014/04/java-8-stream-examples-and-tutorial.html
 // Convert String to uppercase and Join them with coma
 
