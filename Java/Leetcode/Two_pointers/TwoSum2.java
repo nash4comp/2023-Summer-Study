@@ -1,4 +1,3 @@
-package Leetcode.Two_pointers;
 
 import java.util.*;
 import java.util.stream.Collectors;
