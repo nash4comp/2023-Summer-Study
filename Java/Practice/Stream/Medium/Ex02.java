@@ -1,3 +1,4 @@
+package Medium;
 // ChatGPT generated problems #1
 
 // Write a method that returns the average age of all users in a list.

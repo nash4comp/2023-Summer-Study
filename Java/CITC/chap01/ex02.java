@@ -1,4 +1,4 @@
-package Java.CITC.chap01;
+package CITC.chap01;
 
 public class ex02 {
     public static void main(String[] args) {

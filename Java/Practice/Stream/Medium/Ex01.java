@@ -1,3 +1,4 @@
+package Medium;
 // ChatGPT generated problems #1
 
 // Write a method to collect the names of all employees in a list

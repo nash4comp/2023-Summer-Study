@@ -1,3 +1,4 @@
+package Medium;
 // This is a data class for medium stream problems
 
 import java.util.*;

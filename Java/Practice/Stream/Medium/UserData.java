@@ -1,3 +1,4 @@
+package Medium;
 public class UserData {
     private String name;
     private int age;
