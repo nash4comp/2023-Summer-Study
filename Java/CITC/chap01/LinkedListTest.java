@@ -73,15 +73,15 @@ public class LinkedListTest {
         // myLinkedList.printNode();
         System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
         // System.out.println(myLinkedList.extractNumber());
-        MyLinkedList list1 = new MyLinkedList();
-        MyLinkedList list2 = new MyLinkedList();
-        list1.insertLastNode(6);
-        list1.insertLastNode(1);
-        list1.insertLastNode(7);
-        list2.insertLastNode(2);
-        list2.insertLastNode(3);
-        list2.insertLastNode(4);
-        addTwoNodesReverse(list1, list2).printNode();
+        // MyLinkedList list1 = new MyLinkedList();
+        // MyLinkedList list2 = new MyLinkedList();
+        // list1.insertLastNode(6);
+        // list1.insertLastNode(1);
+        // list1.insertLastNode(7);
+        // list2.insertLastNode(2);
+        // list2.insertLastNode(3);
+        // list2.insertLastNode(4);
+        // addTwoNodesReverse(list1, list2).printNode();
 
         // LinkedList linkedList = new LinkedList<>();
         // linkedList.add(1);
@@ -89,6 +89,12 @@ public class LinkedListTest {
         // linkedList.add(3);
         // linkedList.removeFirst();
         // System.out.println(linkedList);
+        myLinkedList.deleteFirstNode();
+        myLinkedList.insertFirstNode(1);
+        myLinkedList.insertFirstNode(2);
+        myLinkedList.insertFirstNode(3);
+        myLinkedList.printNode();
+        System.out.println(myLinkedList.isPalindrome());
 
     }
 
@@ -207,7 +213,6 @@ class MyLinkedList { // Circular doubly linked list
         for (int i = 0; i < k; i++) {
             currentNode = currentNode.next;
         }
-
         return currentNode.data;
     }
 
@@ -235,6 +240,15 @@ class MyLinkedList { // Circular doubly linked list
         return number;
     }
 
+    public boolean isPalindrome() {
+        while (totalNodeSize > 1) {
+            if (deleteFirstNode() != deleteLastNode()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void printNode() {
         if (headNode == null) {
             System.out.println("This is empty node.");
@@ -246,5 +260,6 @@ class MyLinkedList { // Circular doubly linked list
             } while (currentNode != headNode); // Check the current node pointer whether it returns back to the first
             // node.
         }
+        System.out.println();
     }
 }
