@@ -15,6 +15,21 @@ class Node {
 }
 
 public class LinkedListTest {
+    public static MyLinkedList addTwoNodesReverse(MyLinkedList firstList, MyLinkedList secondList) {
+        int sum = firstList.extractNumber() + secondList.extractNumber();
+        MyLinkedList resultNode = new MyLinkedList();
+        int length = (int) Math.log10(sum) + 1;
+        int digit = 0;
+        int place = length;
+        for (int i = 0; i < length; i++) {
+            digit = sum / (int) Math.pow(10, place - 1);
+            sum -= digit * (int) Math.pow(10, place - 1);
+            resultNode.insertFirstNode(digit);
+            place--;
+        }
+        return resultNode;
+    }
+
     public static void main(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.insertLastNode(1);
@@ -25,37 +40,48 @@ public class LinkedListTest {
         myLinkedList.insertFirstNode(-2);
         myLinkedList.insertFirstNode(-3);
         myLinkedList.insertFirstNode(-4);
-        myLinkedList.printNode();
-        System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
-        System.out.println("\nAfter deleting the first node");
         myLinkedList.deleteFirstNode();
         myLinkedList.deleteFirstNode();
         myLinkedList.deleteFirstNode();
+        myLinkedList.deleteFirstNode();
+
         myLinkedList.printNode();
+        // System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
+        // System.out.println("\nAfter deleting the first node");
+        // myLinkedList.deleteFirstNode();
+        // myLinkedList.deleteFirstNode();
+        // myLinkedList.deleteFirstNode();
+        // myLinkedList.printNode();
+        // System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
+        // System.out.println("\nAfter deleting the last node");
+        // myLinkedList.deleteLastNode();
+        // myLinkedList.deleteLastNode();
+        // myLinkedList.deleteLastNode();
+        // System.out.println("\nBefore deleting duplicate node");
+        // myLinkedList.insertLastNode(1);
+        // myLinkedList.insertLastNode(2);
+        // myLinkedList.insertLastNode(3);
+        // myLinkedList.insertLastNode(4);
+        // myLinkedList.insertLastNode(5);
+        // myLinkedList.insertLastNode(1);
+        // myLinkedList.insertLastNode(2);
+        // myLinkedList.insertLastNode(3);
+        // myLinkedList.printNode();
+        // System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
+        // myLinkedList.deleteDuplicates();
+        // System.out.println("\nAfter deleting duplicate node");
+        // myLinkedList.printNode();
         System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
-        System.out.println("\nAfter deleting the last node");
-        myLinkedList.deleteLastNode();
-        myLinkedList.deleteLastNode();
-        myLinkedList.deleteLastNode();
-        System.out.println("\nBefore deleting duplicate node");
-        myLinkedList.insertLastNode(1);
-        myLinkedList.insertLastNode(2);
-        myLinkedList.insertLastNode(3);
-        myLinkedList.insertLastNode(4);
-        myLinkedList.insertLastNode(5);
-        myLinkedList.insertLastNode(1);
-        myLinkedList.insertLastNode(2);
-        myLinkedList.insertLastNode(3);
-        myLinkedList.printNode();
-        System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
-        myLinkedList.deleteDuplicates();
-        System.out.println("\nAfter deleting duplicate node");
-        myLinkedList.printNode();
-        System.out.println("\nTotal node size: " + myLinkedList.getTotalNodeSize());
-        System.out.println(myLinkedList.findKthToLastElement(0));
-        System.out.println(myLinkedList.findKthToLastElement(1));
-        System.out.println(myLinkedList.findKthToLastElement(6));
-        System.out.println(myLinkedList.findKthToFirstElement(7));
+        // System.out.println(myLinkedList.extractNumber());
+        MyLinkedList list1 = new MyLinkedList();
+        MyLinkedList list2 = new MyLinkedList();
+        list1.insertLastNode(6);
+        list1.insertLastNode(1);
+        list1.insertLastNode(7);
+        list2.insertLastNode(2);
+        list2.insertLastNode(3);
+        list2.insertLastNode(4);
+        addTwoNodesReverse(list1, list2).printNode();
 
         // LinkedList linkedList = new LinkedList<>();
         // linkedList.add(1);
@@ -196,6 +222,19 @@ class MyLinkedList { // Circular doubly linked list
         return currentNode.data;
     }
 
+    public int extractNumber() {
+        int number = 0;
+        while (totalNodeSize > 0) {
+            if (findKthToLastElement(0) < 0) {
+                System.out.println("There are minus element. The conversion cannot be done.");
+                return -1;
+            } else {
+                number += (int) Math.pow(10, totalNodeSize - 1) * deleteLastNode();
+            }
+        }
+        return number;
+    }
+
     public void printNode() {
         if (headNode == null) {
             System.out.println("This is empty node.");
@@ -205,7 +244,7 @@ class MyLinkedList { // Circular doubly linked list
                 System.out.printf("%d ", currentNode.data);
                 currentNode = currentNode.next;
             } while (currentNode != headNode); // Check the current node pointer whether it returns back to the first
-                                               // node.
+            // node.
         }
     }
 }
