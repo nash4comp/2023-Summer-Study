@@ -25,7 +25,7 @@ public class MyQueue<T> {
         if (bottom == null) {
             bottom = top;
         }
-        increaseQueueCounter();
+        increaseQueueCounter();  
         return data;
     }
 
@@ -83,9 +83,9 @@ public class MyQueue<T> {
         myQueue.queue(2);
         myQueue.queue(3);
         myQueue.queue(4);
-        // myQueue.dequeue();
-        // myQueue.dequeue();
-        // myQueue.dequeue();
+        myQueue.dequeue();
+        myQueue.dequeue();
+        myQueue.dequeue();
         myQueue.printQueue();
 
         // myQueue.printQueue();

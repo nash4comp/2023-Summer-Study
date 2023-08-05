@@ -1,4 +1,4 @@
-package Java.CITC.chap03;
+package CITC.chap03;
 
 import java.util.*;
 
