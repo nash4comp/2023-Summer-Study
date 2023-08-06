@@ -16,7 +16,7 @@ public class MyQueue<T> {
     private MyQueueNode<T> bottom;
     private int queueCounter = 0;
 
-    public T queue(T data) {
+    public T enqueue(T data) {
         MyQueueNode<T> newQueue = new MyQueueNode<>(data);
         if (top != null) {
             top.next = newQueue; // if bottom == top, the next pointer of bottom is also points newQueue
