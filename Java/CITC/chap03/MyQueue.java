@@ -79,10 +79,10 @@ public class MyQueue<T> {
 
     public static void main(String[] args) {
         MyQueue<Integer> myQueue = new MyQueue<>();
-        myQueue.queue(1);
-        myQueue.queue(2);
-        myQueue.queue(3);
-        myQueue.queue(4);
+        myQueue.enqueue(1);
+        myQueue.enqueue(2);
+        myQueue.enqueue(3);
+        myQueue.enqueue(4);
         myQueue.dequeue();
         myQueue.dequeue();
         myQueue.dequeue();
