@@ -9,7 +9,7 @@ public class MySort {
         int i, j, temp;
         int n = arr.length;
         boolean swapped;
-        
+
         for (i = 0; i < n - 1; i++) {
             swapped = false;
             for (j = 0; j < n - i - 1; j++) {
@@ -30,7 +30,26 @@ public class MySort {
         return timeElapsed.toNanos();
     }
 
+    static long mySelectionSort(int arr[]) {
+        Instant start = Instant.now();
+        int n = arr.length;
 
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
+
+        Instant end = Instant.now();
+        Duration timeElapsed = Duration.between(start, end);
+        return timeElapsed.toNanos();
+    }
 
     static void printArray(int arr[]) {
         for (int element : arr) {
@@ -43,6 +62,11 @@ public class MySort {
         int arr[] = { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
         System.out.print("Bubble sort: ");
         myBubbleSort(arr);
+        printArray(arr);
+        
+        arr = new int[] { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
+        System.out.print("Selection sort: ");
+        mySelectionSort(arr);
         printArray(arr);
     }
 
