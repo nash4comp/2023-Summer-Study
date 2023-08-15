@@ -35,10 +35,6 @@ public class MyBinarySearchTree {
         public int getData() {
             return data;
         }
-
-        public void setData(int data) {
-            this.data = data;
-        }
     }
 
     private Node root;
@@ -154,7 +150,6 @@ public class MyBinarySearchTree {
                 System.out.println("\n" + getNodeCounter());
                 break;
         }
-
     }
 
     public static void main(String[] args) {
@@ -165,9 +160,6 @@ public class MyBinarySearchTree {
             myBST.addData(value);
         }
 
-        // myBST.addData(3);
-        // myBST.addData(1);
-        // myBST.addData(2);
         System.out.println(IN_ORDER_TRAVERSE);
         myBST.printNode(IN_ORDER_TRAVERSE);
         System.out.println();
