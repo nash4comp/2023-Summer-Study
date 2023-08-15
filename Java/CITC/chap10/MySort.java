@@ -51,6 +51,24 @@ public class MySort {
         return timeElapsed.toNanos();
     }
 
+    static long myInsertionSort(int arr[]) {
+        Instant start = Instant.now();
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+
+        Instant end = Instant.now();
+        Duration timeElapsed = Duration.between(start, end);
+        return timeElapsed.toNanos();
+    }
+
     static void printArray(int arr[]) {
         for (int element : arr) {
             System.out.print(element + " ");
@@ -63,10 +81,15 @@ public class MySort {
         System.out.print("Bubble sort: ");
         myBubbleSort(arr);
         printArray(arr);
-        
+
         arr = new int[] { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
         System.out.print("Selection sort: ");
         mySelectionSort(arr);
+        printArray(arr);
+
+        arr = new int[] { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
+        System.out.print("Insertion sort: ");
+        myInsertionSort(arr);
         printArray(arr);
     }
 
