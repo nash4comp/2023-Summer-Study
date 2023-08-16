@@ -23,7 +23,6 @@ public class MySort {
             if (swapped == false)
                 break;
         }
-        // This requires O(N^2) time complexity
 
         Instant end = Instant.now();
         Duration timeElapsed = Duration.between(start, end);
@@ -150,6 +149,42 @@ public class MySort {
         System.out.println();
     }
 
+    static private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    static private int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1);
+        for (int j = low; j <= high - 1; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+        swap(arr, i + 1, high);
+        return (i + 1);
+    }
+
+    static private void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pivot = partition(arr, low, high);
+            quickSort(arr, low, pivot - 1);
+            quickSort(arr, pivot + 1, high);
+        }
+    }
+
+    static long myQuickSort(int[] arr) {
+        Instant start = Instant.now();
+        int n = arr.length;
+        quickSort(arr, 0, n - 1);
+        Instant end = Instant.now();
+        Duration timeElapsed = Duration.between(start, end);
+        return timeElapsed.toNanos();
+    }
+
     public static void main(String[] args) {
         int arr[] = { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
         System.out.print("Bubble sort: ");
@@ -169,6 +204,11 @@ public class MySort {
         arr = new int[] { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
         System.out.print("Merge sort: ");
         myMergeSort(arr);
+        printArray(arr);
+
+        arr = new int[] { 25, 15, 10, 4, 12, 22, 18, 24, 31, 35, 44, 50, 70, 66, 90 };
+        System.out.print("Quick sort: ");
+        myQuickSort(arr);
         printArray(arr);
 
     }
